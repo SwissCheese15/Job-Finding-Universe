@@ -1,0 +1,41 @@
+Targets:
+- About Planets
+
+Code:
+- Clean up spaghetti Code
+
+Prettification:
+- diffrent models (Ice cream)
+- compress audio files (honk is done)
+- tacho
+- audio toggle listener
+
+space populating:
+- slightly randomize planet scale
+
+Instructions:
+- key symbols responsive
+
+eastereggs:
+- UFOs
+- edge
+
+Media Query:
+- controlls
+
+Browser-support:
+- tests
+
+    // // ##################################### FPS Check 
+
+    //                 const getFPS = () =>
+    //             new Promise(resolve =>
+    //                 requestAnimationFrame(t1 =>
+    //                 requestAnimationFrame(t2 => resolve(1000 / (t2 - t1)))
+    //                 )
+    //             )
+
+    //             // Calling the function to get the FPS
+    //             getFPS().then(fps => console.log(fps));
+
+    // // ################################# FPS Check End
