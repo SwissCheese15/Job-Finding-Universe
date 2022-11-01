@@ -2,11 +2,17 @@
 
 ## Background
 I created this website on my weekends and evenings during the Full-Stack Bootcamp.
-Learing three.js was a great task for my spare time. The project was good for javascript training and helped my improve at coding in general.
-It felt like **my own little hackatlon**. Me vs. the features I kept coming up with. If you look at the repo, you'll see a bunch of "spaghetti code". Structuring everything into diffrent files is my To-Do list 😅.
+Learing three.js was great for my spare time, because i trained javascript and improved at coding in general.
+It felt like **"my own little hackatlon"**. Me vs. the features I kept coming up with.
+
+## Highlights
+**- Figuring out the rocket controls** <br>
+**- Cracking the GPS Functionality** <br>
+**- Redirecting to other pages depending on rocket position** <br>
+
 
 ## Website
-You can visit the live version of the project on https://job-finding-universe.vercel.app
+You can visit the live version of the project at https://job-finding-universe.vercel.app
 
 ## Models / Textures
 If anyone wants my little **rocket model**, the **GPS arrow** or the **toon-globe** textures, take them from the project or go to: <br>
