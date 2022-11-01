@@ -6,38 +6,6 @@ import { gsap } from 'gsap'
 import { DoubleSide } from 'three'
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js'
 
-/**
- * Loaders
- */
-// const loadingBarElement = document.querySelector('.loading-bar')
-// const loadingManager = new THREE.LoadingManager(
-//     // Loaded
-//     () =>
-//     {
-//         // Wait a little
-//         window.setTimeout(() =>
-//         {
-//             // Animate overlay
-//             gsap.to(overlayMaterial.uniforms.uAlpha, { duration: 3, value: 0, delay: 1 })
-
-//             // Update loadingBarElement
-//             loadingBarElement.classList.add('ended')
-//             loadingBarElement.style.transform = ''
-//         }, 500)
-//     },
-
-//     // Progress
-//     (itemUrl, itemsLoaded, itemsTotal) =>
-//     {
-//         // Calculate the progress and update the loadingBarElement
-//         const progressRatio = itemsLoaded / itemsTotal
-//         loadingBarElement.style.transform = `scaleX(${progressRatio})`
-//     }
-// )
-// // Loaders
-// const textureLoader = new THREE.TextureLoader(loadingManager)
-// const gltfLoader = new GLTFLoader(loadingManager)
-
 // HTML Elements
 var controlDiv = document.getElementById("controls")
 var welcomeDiv = document.getElementById("welcome")
@@ -93,7 +61,6 @@ const addFlightInfo = () => {
     controlDiv.appendChild(controlImageDiv)
 }
 
-
 var enterButtonDiv = document.createElement("div")
 enterButtonDiv.classList.add("enterButtonDiv")
 enterButtonDiv.classList.add("hidden")
@@ -101,7 +68,6 @@ var enterButtonImage = document.createElement("img")
 enterButtonImage.src = "images/enter.png"
 enterButtonDiv.appendChild(enterButtonImage)
 enterDiv.appendChild(enterButtonDiv)
-
 
 var enterIsVisible = 0
 
@@ -152,7 +118,6 @@ speakerImage.src = "images/yes_sound.png"
 
 
 const toggleSound = () => {
-    console.log("toggle")
     if (soundOn) {speakerImage.src = "images/no_sound.png"}
     else {speakerImage.src = "images/yes_sound.png"}
     speakerDiv.appendChild(speakerImage)
@@ -197,36 +162,7 @@ const canvas = document.querySelector('canvas.webgl')
 // Scene
 const scene = new THREE.Scene()
 
-// // Overlay
-
-// const overlayGeometry = new THREE.PlaneGeometry(2, 2, 1, 1)
-// const overlayMaterial = new THREE.ShaderMaterial({
-//     // wireframe: true,
-//     transparent: true,
-//     uniforms:
-//     {
-//         uAlpha: { value: 1 }
-//     },
-//     vertexShader: `
-//         void main()
-//         {
-//             gl_Position = vec4(position, 1.0);
-//         }
-//     `,
-//     fragmentShader: `
-//         uniform float uAlpha;
-
-//         void main()
-//         {
-//             gl_FragColor = vec4(0.0, 0.0, 0.0, uAlpha);
-//         }
-//     `
-// })
-// const overlay = new THREE.Mesh(overlayGeometry, overlayMaterial)
-// scene.add(overlay)
-
-
-// // Models / Rocket / Duck -------------------------------------------------------
+// Models / Rocket / Duck -------------------------------------------------------
 
 const rocketGroup = new THREE.Group()
 const arrowGroup = new THREE.Group()
@@ -236,7 +172,6 @@ gltfLoader.load(
     '/models/rocket_2.glb',
     (gltf) =>
     {
-        console.log(gltf)
         gltf.scene.scale.set(1.5, 1.5, 1.5)
         gltf.scene.position.set(0, -5.2, 0)
         gltf.scene.rotation.y = Math.PI * 1.5
@@ -278,7 +213,6 @@ duckGroup.rotation.y = Math.PI
 scene.add(duckGroup)
 
 // End of Models -------------------------------------------------
-// updateAllMaterials()
 
 // Objects =================================================================================
 // Earth ------------------------------------------------------------
@@ -449,8 +383,6 @@ const randomizeMatrix = ( matrix ) => {
     numberY % 2? numberY *= -1 : numberY
     numberZ % 2? numberZ *= -1 : numberZ
 
-    console.log(numberX)
-
     position.x = numberX
     position.y = numberY
     position.z = numberZ
@@ -546,7 +478,6 @@ for ( let j = 0; j < planetThreeCount; j ++ ) {
 // neccesary to update the new colors
 
 scene.add( planetThreeMesh )
-
 
 // End Planets -------------------------------------------------------
 
@@ -747,13 +678,8 @@ const points = [
 
 const directionalLight = new THREE.DirectionalLight('#ffffff', 2)
 const hemisphereLight = new THREE.HemisphereLight('#ffffff', '#ffffff', 1.5)
-// directionalLight.castShadow = true
-// directionalLight.shadow.camera.far = 15
-// directionalLight.shadow.mapSize.set(1024, 1024)
-// directionalLight.shadow.normalBias = 0.05
 directionalLight.position.set(25, 100, 0)
 scene.add(directionalLight, hemisphereLight)
-
 
 window.addEventListener('resize', () =>
 {
@@ -892,7 +818,6 @@ const sizes = {
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.set(-1.9, 35.05, 0)
 camera.lookAt(rocketGroup.position)
-console.log(rocketGroup.position)
 
 scene.add(camera)
 camera.lookAt(rocketGroup.position)
@@ -986,7 +911,6 @@ const welcomeTick = () => {
 
 }
 
-
 // Second phase for the launch. (Camera doing a slight turn, moving up, then passed by rocket)
 const launchTick = () => {
     
@@ -1033,52 +957,6 @@ const flightTick = () =>
 {
     // Update controls
     controls.update()
-
-    // point position
-    // point visibility
-    // if (sceneReady) {
-    //     // looping through all points
-    //     for(const point of points) {   
-    //         // creating a clone of the current position
-    //         const screenPosition = point.position.clone()
-    //         // turning 3D coordinates into Normalized Device Coordinates
-    //         screenPosition.project(camera)
-
-    //         // setting up a raycaster from the camera to the object
-    //         raycaster.setFromCamera(screenPosition, camera)
-    //         // defining what objects are being checked for raycaster collision
-    //         // ??? don't raycast on everything
-    //         const intersects = raycaster.intersectObjects(scene.children, true)
-
-    //         // adding or removing the visible class
-    //         // no intersections --> visible
-    //         if(intersects.length === 0)
-    //         {
-    //             point.element.classList.add('visible')
-    //         }
-    //         // yes intersections. Check what is closer to the camera
-    //         else
-    //         {
-    //             // how far away the intersection is
-    //             const intersectionDistance = intersects[0].distance
-    //             // how far away the object is
-    //             const pointDistance = point.position.distanceTo(camera.position)
-
-    //             if(intersectionDistance < pointDistance)
-    //             {
-    //                 point.element.classList.remove('visible')
-    //             }
-    //             else
-    //             {
-    //                 point.element.classList.add('visible')
-    //             }
-    //         }
-
-    //         const translateX = screenPosition.x * sizes.width * 0.5
-    //         const translateY = - screenPosition.y * sizes.height * 0.5
-    //         point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
-    //     }
-    // }
 
     // Rocket Animations -----------------------------------
 
@@ -1140,7 +1018,6 @@ const flightTick = () =>
     
     if (isHonking) {
         let elapsedHonkingTime = honkingClock.getElapsedTime()
-        console.log(elapsedHonkingTime)
         if (elapsedHonkingTime > 0.1) {rocketGroup.scale.set(1.1, 1.1, 1.1)}
         if (elapsedHonkingTime > 0.2) {rocketGroup.scale.set(1, 1, 1)}
         if (elapsedHonkingTime > 0.3) {rocketGroup.scale.set(1.1, 1.1, 1.1)}
@@ -1150,22 +1027,6 @@ const flightTick = () =>
         }
     }
 
-        // ##################################### FPS Check 
-
-                    const getFPS = () =>
-                new Promise(resolve =>
-                    requestAnimationFrame(t1 =>
-                    requestAnimationFrame(t2 => resolve(1000 / (t2 - t1)))
-                    )
-                )
-
-                // Calling the function to get the FPS
-                getFPS().then(fps => console.log(fps));
-
-    // ################################# FPS Check End
-
-
-    
     // Having the camera look at the rocket
     camera.lookAt(rocketGroup.position)
     
@@ -1175,5 +1036,3 @@ const flightTick = () =>
     // Call tick again on the next frame
     window.requestAnimationFrame(flightTick)
 }
-
-console.log(renderer.info.render.calls)
