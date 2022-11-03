@@ -823,8 +823,8 @@ scene.add(camera)
 camera.lookAt(rocketGroup.position)
 
 // Controls
-const controls = new OrbitControls(camera, canvas)
-controls.enableDamping = true
+// const controls = new OrbitControls(camera, canvas)
+// controls.enableDamping = true
 
 camera.lookAt(rocketGroup.position)
 
@@ -955,8 +955,8 @@ const launchTick = () => {
 // Third phase, flight. Triggered when camera and rocket pos Y level.
 const flightTick = () =>
 {
-    // Update controls
-    controls.update()
+    // // Update controls
+    // controls.update()
 
     // Rocket Animations -----------------------------------
 
