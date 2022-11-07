@@ -62,10 +62,17 @@
         margin-left: 4vw;
     }
 
-    .controlHonkDiv {
+    #controlHonkDiv {
         display: flex;
         justify-content: center;
-        margin-left: 7vw;
+        margin-left: 12vw;
+        width: 25vw;
+    }
+
+    #controlHonkDiv img {
+        display: flex;
+        justify-content: center;
+        width: 25vw;
     }
     
     #startImageMobile img {
@@ -155,7 +162,8 @@
     
     .juleDiv {
         position: absolute;
-        left: 30vw ; top: 25vh;
+        top: 10vh; left: 5vw;
+        width: 90vw;
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -167,6 +175,7 @@
     .juleDiv img {
         height: 50vh;
         border-radius: 5%;
+        width: 90vw;
     }
     
     .juleDiv.hidden {
@@ -178,7 +187,7 @@
     .juleDiv.hidden img{
         opacity: 0;
         transition: opacity 1s;
-        height: 1vh;
+        width: 1vh;
     }
     
     #speaker {
@@ -195,12 +204,5 @@
     #speaker img {
         height: 6vh;
     }
-    
-    #honking {
-        margin-left: 1.85vh;
-        height: 8.5vh;
-    }
+
   }
-
-
-

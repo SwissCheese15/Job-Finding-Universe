@@ -141,9 +141,10 @@ const addFlightInfo = () => {
 
         // Honking Button
         var controlHonkDiv = document.createElement("div")
-        controlHonkDiv.classList.add("controlHonkDiv")
+        controlHonkDiv.setAttribute("id", "controlHonkDiv")
         var honkingImage = document.createElement("img")
         honkingImage.src = "images/honk_key.png"
+        honkingImage.setAttribute("id", "honkingImage")
 
         const handleHonk = () => {
             return  soundOn ? honkSound.play() : "" ,
@@ -1007,7 +1008,6 @@ slowerSoundOne.setVolume(volume)
 slowerSoundTwo.setVolume(volume)
 honkSound.setVolume(volume)
 
-
 audioLoader.load("/sounds/countdown.mp3", (buffer) => {
     countdownSound.setBuffer(buffer)
 })
@@ -1113,7 +1113,7 @@ const launchTick = () => {
 // Third phase, flight. Triggered when camera and rocket pos Y level.
 const flightTick = () =>
 {
-    // Update controls
+    // // Update controls
     // controls.update()
 
     // Rocket Animations -----------------------------------
