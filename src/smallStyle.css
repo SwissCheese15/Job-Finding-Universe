@@ -19,7 +19,7 @@
     
     #controls {
         position: absolute;
-        width: 87vw;
+        width: 100vw;
         height: 30vh;
         top: 60vh;
         opacity: 1;
@@ -131,6 +131,7 @@
         position: absolute;
         left: 35vw ; top: 10vh;
         display: flex;
+        width: 30vw;
         justify-content: center;
         align-items: flex-start;
         opacity: 1;

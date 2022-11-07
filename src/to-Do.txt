@@ -8,10 +8,6 @@ Prettification:
 - diffrent models (Ice cream)
 - compress audio files (honk is done)
 - tacho
-- audio toggle listener
-
-space populating:
-- slightly randomize planet scale
 
 Instructions:
 - key symbols responsive
@@ -21,10 +17,11 @@ eastereggs:
 - edge
 
 Media Query:
-- controlls
+- honk bigger
+- sound
 
 Browser-support:
-- tests
+- firefox addblocker
 
     // // ##################################### FPS Check 
 
