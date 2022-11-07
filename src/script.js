@@ -127,10 +127,10 @@ const addFlightInfo = () => {
             move_right = 0
         }
 
-        leftImage.addEventListener("mousedown", makeLeftTrue)
-        leftImage.addEventListener("mouseup", makeLeftFalse)
-        rightImage.addEventListener("mousedown", makeRightTrue)
-        rightImage.addEventListener("mouseup", makeRightFalse)
+        leftImage.addEventListener("touchstart", makeLeftTrue)
+        leftImage.addEventListener("touchend", makeLeftFalse)
+        rightImage.addEventListener("touchstart", makeRightTrue)
+        rightImage.addEventListener("touchend", makeRightFalse)
 
         controlLeftRightDiv.appendChild(leftImage)
         controlLeftRightDiv.appendChild(rightImage)
