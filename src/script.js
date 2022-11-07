@@ -864,7 +864,7 @@ const doMobileAudio = () => {
 
     let audioLoader = new THREE.AudioLoader()
 
-    const volume = 0.15
+    const volume = 100
 
     countdownSound = new THREE.Audio(listener)
     launchSound = new THREE.Audio(listener)
