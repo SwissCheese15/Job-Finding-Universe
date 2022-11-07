@@ -110,20 +110,22 @@ const addFlightInfo = () => {
         var rightImage = document.createElement("img")
         rightImage.src = "images/right.png"
 
-        const makeLeftTrue = (e) => {
-            e.preventDefault,
+        const makeLeftTrue = (e) => { 
+            console.log(e),
+            e.preventDefault(),
+            console.log(e)
             move_left = 1
         }
         const makeLeftFalse = (e) => {
-            e.preventDefault,
+            e.preventDefault(),
             move_left = 0
         }
         const makeRightTrue = (e) => {
-            e.preventDefault,
+            e.preventDefault(),
             move_right = 1
         }
         const makeRightFalse = (e) => {
-            e.preventDefault,
+            e.preventDefault(),
             move_right = 0
         }
 
