@@ -146,10 +146,7 @@ const addFlightInfo = () => {
         honkingImage.src = "images/honk_key.png"
 
         const handleHonk = () => {
-            const honkSound = new THREE.Audio(listener)
-            const honkElement = document.getElementById( 'honk' );
-            honkSound.setMediaElementSource( honkElement );      
-            honkSound.play()
+            return  soundOn ? honkSound.play() : "" ,
             isHonking = 1,
             honkingClock.start()
         }
@@ -920,7 +917,7 @@ document.onkeydown = function(e) {
 
     // Honk
     else if (k === "KeyH") {
-        // return  soundOn ? honkSound.play() : "" ,
+        return  soundOn ? honkSound.play() : "" ,
         isHonking = 1,
         honkingClock.start()
     }
@@ -1000,7 +997,7 @@ const fasterSoundOne = new THREE.Audio(listener)
 const fasterSoundTwo = new THREE.Audio(listener)
 const slowerSoundOne = new THREE.Audio(listener)
 const slowerSoundTwo = new THREE.Audio(listener)
-// const honkSound = new THREE.Audio(listener)
+const honkSound = new THREE.Audio(listener)
 
 countdownSound.setVolume(volume * 0.5)
 launchSound.setVolume(volume)
@@ -1008,7 +1005,7 @@ fasterSoundOne.setVolume(volume)
 fasterSoundTwo.setVolume(volume)
 slowerSoundOne.setVolume(volume)
 slowerSoundTwo.setVolume(volume)
-// honkSound.setVolume(volume)
+honkSound.setVolume(volume)
 
 
 audioLoader.load("/sounds/countdown.mp3", (buffer) => {
@@ -1025,9 +1022,9 @@ audioLoader.load("/sounds/slower.mp3", (buffer) => {
     slowerSoundOne.setBuffer(buffer),
     slowerSoundTwo.setBuffer(buffer)
 })
-// audioLoader.load("/sounds/honk.mp3", (buffer) => {
-//     honkSound.setBuffer(buffer)
-// })
+audioLoader.load("/sounds/honk.mp3", (buffer) => {
+    honkSound.setBuffer(buffer)
+})
 
 // End of Sounds -------------------------------------------------
 
