@@ -9,6 +9,7 @@ import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeom
 
 // Media Query
 const smallScreen = window.matchMedia('(max-width: 600px)')
+window.addEventListener("contextmenu", function(e) {e.stopPropagation();e.preventDefault();}, true)
 
 // HTML Elements
 let controlDiv = document.getElementById("controls")
@@ -126,10 +127,10 @@ const addFlightInfo = () => {
             move_right = 0
         }
 
-        leftImage.addEventListener("touchstart", makeLeftTrue)
-        leftImage.addEventListener("touchend", makeLeftFalse)
-        rightImage.addEventListener("touchstart", makeRightTrue)
-        rightImage.addEventListener("touchend", makeRightFalse)
+        leftImage.addEventListener("mousedown", makeLeftTrue)
+        leftImage.addEventListener("mouseup", makeLeftFalse)
+        rightImage.addEventListener("mousedown", makeRightTrue)
+        rightImage.addEventListener("mouseup", makeRightFalse)
 
         controlLeftRightDiv.appendChild(leftImage)
         controlLeftRightDiv.appendChild(rightImage)
