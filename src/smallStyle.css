@@ -136,28 +136,38 @@
     
     .enterButtonDiv {
         position: absolute;
-        left: 30vw ; top: 10vh;
+        left: 25vw ; top: 10vh;
         display: flex;
-        width: 40vw;
+        width: 50vw;
         justify-content: center;
         align-items: flex-start;
         opacity: 1;
+        transition: height 1s;
+        transition: width 1s;
     }
     
     .enterButtonDiv img {
-        width: 40vw;
+        width: 50vw;
+        transition: height 1s;
+        transition: width 1s;
     }
     
     .enterButtonDiv.hidden {
         opacity: 0;
         transition: opacity 1s;
-        height: 1vh;
+        width: 1px;
+        height: 1px;
+        transition: height 1s;
+        transition: width 1s;
     }
     
     .enterButtonDiv.hidden img{
         opacity: 0;
         transition: opacity 1s;
-        height: 1vh;
+        width: 1px;
+        height: 1px;
+        transition: height 1s;
+        transition: width 1s;
     }
     
     .juleDiv {
@@ -181,18 +191,24 @@
     .juleDiv.hidden {
         opacity: 0;
         transition: opacity 1s;
-        height: 1vh;
+        height: 1px;
+        width: 1px;
+        transition: height 1s;
+        transition: width 1s;
     }
     
     .juleDiv.hidden img{
         opacity: 0;
         transition: opacity 1s;
-        width: 1vh;
+        height: 1px;
+        width: 1px;
+        transition: height 1s;
+        transition: width 1s;
     }
     
     #speaker {
         position: absolute;
-        right: 0 ; bottom: 0;
+        right: 5vw ; bottom: 0;
         display: flex;
         justify-content: center;
         align-items: center;

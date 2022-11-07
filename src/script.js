@@ -42,6 +42,12 @@ const startEverything = () => {
     welcomeTick()
     welcomeSubDiv.classList.add("hidden")
     document.removeEventListener("click", startEverything)
+    setTimeout(() => {
+        if (smallScreen.matches) {
+            controlDiv.addEventListener("click", startCommand),
+            console.log("now")
+        }
+      }, 4900)
 }
 const removeWelcomeDiv = () => {
     welcomeDiv.removeChild(welcomeSubDiv)
@@ -862,13 +868,6 @@ const startCommand = () => {
 }
 
 document.addEventListener("click", startEverything)
-// Mobile event listeners
-if (smallScreen.matches) {
-
-    controlDiv.addEventListener("click", startCommand)
-
-}
-
 
 // Key Down Listener
 document.onkeydown = function(e) {
