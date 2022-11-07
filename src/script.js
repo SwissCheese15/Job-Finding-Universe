@@ -39,7 +39,6 @@ if (smallScreen.matches) {
 welcomeDiv.appendChild(welcomeSubDiv)
 
 const startEverything = () => {
-    if (smallScreen.matches) {loadSound()}
     welcomeTick()
     welcomeSubDiv.classList.add("hidden")
     document.removeEventListener("click", startEverything)
@@ -985,70 +984,48 @@ camera.lookAt(rocketGroup.position)
 
 // Sounds --------------------------------------------------------
 
-    
-    
-    // Sounds --------------------------------------------------------
+const listener = new THREE.AudioListener()
+camera.add(listener)
 
-    const listener = new THREE.AudioListener()
-    camera.add(listener)
-    
-    const audioLoader = new THREE.AudioLoader()
-    
-    const volume = 0.15
-    
-    const countdownSound = new THREE.Audio(listener)
-    const launchSound = new THREE.Audio(listener)
-    const fasterSoundOne = new THREE.Audio(listener)
-    const fasterSoundTwo = new THREE.Audio(listener)
-    const slowerSoundOne = new THREE.Audio(listener)
-    const slowerSoundTwo = new THREE.Audio(listener)
-    const honkSound = new THREE.Audio(listener)
-    
-    countdownSound.setVolume(volume * 0.5)
-    launchSound.setVolume(volume)
-    fasterSoundOne.setVolume(volume)
-    fasterSoundTwo.setVolume(volume)
-    slowerSoundOne.setVolume(volume)
-    slowerSoundTwo.setVolume(volume)
-    honkSound.setVolume(volume)
-    
-    audioLoader.load("/sounds/countdown.mp3", (buffer) => {
-        countdownSound.setBuffer(buffer)
-    })
-    audioLoader.load("/sounds/launch.mp3", (buffer) => {
-        launchSound.setBuffer(buffer)
-    })
-    audioLoader.load("/sounds/thruster.mp3", (buffer) => {
-        fasterSoundOne.setBuffer(buffer),
-        fasterSoundTwo.setBuffer(buffer)
-    })
-    audioLoader.load("/sounds/slower.mp3", (buffer) => {
-        slowerSoundOne.setBuffer(buffer),
-        slowerSoundTwo.setBuffer(buffer)
-    })
-    audioLoader.load("/sounds/honk.mp3", (buffer) => {
-        honkSound.setBuffer(buffer)
-    })
-    const loadSound = () => {
+const audioLoader = new THREE.AudioLoader()
 
-        audioLoader.load("/sounds/countdown.mp3", (buffer) => {
-            countdownSound.setBuffer(buffer)
-        })
-        audioLoader.load("/sounds/launch.mp3", (buffer) => {
-            launchSound.setBuffer(buffer)
-        })
-        audioLoader.load("/sounds/thruster.mp3", (buffer) => {
-            fasterSoundOne.setBuffer(buffer),
-            fasterSoundTwo.setBuffer(buffer)
-        })
-        audioLoader.load("/sounds/slower.mp3", (buffer) => {
-            slowerSoundOne.setBuffer(buffer),
-            slowerSoundTwo.setBuffer(buffer)
-        })
-        audioLoader.load("/sounds/honk.mp3", (buffer) => {
-            honkSound.setBuffer(buffer)
-        })
-    }
+const volume = 0.15
+
+const countdownSound = new THREE.Audio(listener)
+const launchSound = new THREE.Audio(listener)
+const fasterSoundOne = new THREE.Audio(listener)
+const fasterSoundTwo = new THREE.Audio(listener)
+const slowerSoundOne = new THREE.Audio(listener)
+const slowerSoundTwo = new THREE.Audio(listener)
+const honkSound = new THREE.Audio(listener)
+
+countdownSound.setVolume(volume * 0.5)
+launchSound.setVolume(volume)
+fasterSoundOne.setVolume(volume)
+fasterSoundTwo.setVolume(volume)
+slowerSoundOne.setVolume(volume)
+slowerSoundTwo.setVolume(volume)
+honkSound.setVolume(volume)
+
+audioLoader.load("/sounds/countdown.mp3", (buffer) => {
+    countdownSound.setBuffer(buffer)
+})
+audioLoader.load("/sounds/launch.mp3", (buffer) => {
+    console.log("launch loaded")
+    launchSound.setBuffer(buffer)
+    console.log("launch loaded")
+})
+audioLoader.load("/sounds/thruster.mp3", (buffer) => {
+    fasterSoundOne.setBuffer(buffer),
+    fasterSoundTwo.setBuffer(buffer)
+})
+audioLoader.load("/sounds/slower.mp3", (buffer) => {
+    slowerSoundOne.setBuffer(buffer),
+    slowerSoundTwo.setBuffer(buffer)
+})
+audioLoader.load("/sounds/honk.mp3", (buffer) => {
+    honkSound.setBuffer(buffer)
+})
 
 // End of Sounds -------------------------------------------------
 
