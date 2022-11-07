@@ -19,75 +19,9 @@ body {
     outline: none;
 }
 
-.loading-bar {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    height: 2px;
-    background: #ffffff;
-    transform: scaleX(0.3);
-    transform-origin: top left;
-    transition: transform 0.5s;
-}
-
-.loading-bar.ended {
-    transform: scaleX(0);
-    transform-origin: 100% 0;
-    transition: transform 1.5s ease-in-out;
-}
-
-.target {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-}
-
-.target:hover .text{
-    opacity: 1;
-}
-
-.target.visible .image {
-    transform: scale(1, 1);
-}
-
-.target .image {
-    position: absolute;
-    top: -40px;
-    left: -40px;
-    width: 55px;
-    height: 80px;
-    border-radius: 5%;
-    border: 1px solid #ffffff77;
-    color: #ffffff;
-    font-family: Helvetica, Arial, sans-serif;
-    transform: scale(0, 0);
-    transition: transform 0.3s;
-}
-
-.target .text {
-    position: absolute;
-    top: 50px;
-    left: -80px;
-    height: 10px;
-    width: 100px;
-    padding: 20px;
-    border-radius: 6px;
-    background: #00000077;
-    border: 1px solid #ffffff77;
-    color: #ffffff;
-    /* line-height: 1.3em; */
-    font-size: 14px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-}
-
 #controls {
-    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 2.2vh;
-    font-weight: 400;
     position: absolute;
-    right: 5vh ; top: 5vw;
+    right: 9vw ; top: 5vh;
     opacity: 1;
     transition: opacity 1s;
     display: flex;
@@ -106,7 +40,7 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     height: 10vh;
-    width: 18vw;
+    width: 16vw;
 }
 
 .startImageDiv img {
@@ -131,7 +65,6 @@ body {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    color: black;
     font-size: 12vh;
     position: absolute;
     opacity: 1;
@@ -144,7 +77,7 @@ body {
 }
 
 .welcome h2 {
-    font-size: 8.5vh;
+    font-size: 8vh;
     margin-bottom: 10vh;
     font-weight: 600;
 }

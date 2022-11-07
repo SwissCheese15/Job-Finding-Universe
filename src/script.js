@@ -1,4 +1,5 @@
 import './style.css'
+import "./smallStyle.css"
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
@@ -6,23 +7,34 @@ import { gsap } from 'gsap'
 import { DoubleSide } from 'three'
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js'
 
-// HTML Elements
-var controlDiv = document.getElementById("controls")
-var welcomeDiv = document.getElementById("welcome")
-var enterDiv = document.getElementById("enter")
-var juleDiv = document.getElementById("jules")
-var speakerDiv = document.getElementById("speaker")
+// Media Query
+const smallScreen = window.matchMedia('(max-width: 600px)')
 
-var welcomeSubDiv = document.createElement("div")
+// HTML Elements
+let controlDiv = document.getElementById("controls")
+let welcomeDiv = document.getElementById("welcome")
+let enterDiv = document.getElementById("enter")
+let juleDiv = document.getElementById("jules")
+let speakerDiv = document.getElementById("speaker")
+
+let welcomeSubDiv = document.createElement("div")
 welcomeSubDiv.classList.add("welcome")
-var tag = document.createElement("h2")
-var text = document.createTextNode("Welcome, Space Explorer")
-var subTag = document.createElement("p")
-var subText = document.createTextNode("Click anywhere on the screen to start your adventure")
+let tag = document.createElement("h2")
+let text = document.createTextNode("Welcome, Space Explorer")
+let subTag = document.createElement("p")
+let subText = document.createTextNode("Click anywhere on the screen to start your adventure")
 tag.appendChild(text)
 welcomeSubDiv.appendChild(tag)
 subTag.appendChild(subText)
 welcomeSubDiv.appendChild(subTag)
+if (smallScreen.matches) {
+    let mobileTag = document.createElement("p")
+    let mobileBreak = document.createElement("br")
+    let mobileText = document.createTextNode("--- Mobile Version ---")
+    mobileTag.appendChild(mobileBreak)
+    mobileTag.appendChild(mobileText)
+    welcomeSubDiv.appendChild(mobileTag)
+}
 welcomeDiv.appendChild(welcomeSubDiv)
 
 const startEverything = () => {
@@ -33,13 +45,24 @@ const startEverything = () => {
 const removeWelcomeDiv = () => {
     welcomeDiv.removeChild(welcomeSubDiv)
 }
+
 const addStartInfo = () => {
+
     var startImageDiv = document.createElement("div")
     startImageDiv.classList.add("startImageDiv")
     var startImage = document.createElement("img")
-    startImage.src = "images/start.png"
-    startImageDiv.appendChild(startImage)
-    controlDiv.appendChild(startImageDiv)
+
+    if (smallScreen.matches) {
+        startImage.src = "images/mobile_start.png"
+        startImage.setAttribute("style", "width:50vw;")
+        startImageDiv.appendChild(startImage)
+        controlDiv.appendChild(startImageDiv)
+      }
+    else {
+        startImage.src = "images/start.png"
+        startImageDiv.appendChild(startImage)
+        controlDiv.appendChild(startImageDiv)
+    }
 }
 const hideStartInfo = () => {
     controlDiv.classList.add("hidden")
@@ -48,24 +71,105 @@ const removeStartInfo = () => {
     controlDiv.innerHTML = ""
 }
 const addFlightInfo = () => {
+
     controlDiv.classList.remove("hidden")
-    var controlImageDiv = document.createElement("div")
-    controlImageDiv.classList.add("controlImageDiv")
-    var controlImage = document.createElement("img")
-    controlImage.src = "images/controls.png"
-    controlImageDiv.appendChild(controlImage)
-    var honkingImage = document.createElement("img")
-    honkingImage.src = "images/honk_key.png"
-    honkingImage.id = "honking"
-    controlImageDiv.appendChild(honkingImage)
-    controlDiv.appendChild(controlImageDiv)
+    
+
+    if (smallScreen.matches) {
+        // GPS Options
+
+        const pointToCv = () => { cvGps = 1, gitHubGps = 0, linkedinGps = 0 }
+        const pointToGitHub = () => { cvGps = 0, gitHubGps = 1, linkedinGps = 0 }
+        const pointToLinkedin = () => { cvGps = 0, gitHubGps = 0, linkedinGps = 1 }
+
+        var controlGpsDiv = document.createElement("div")
+        controlGpsDiv.setAttribute("id", "controlGpsDiv")
+        var gitHubGpsImage = document.createElement("img")
+        gitHubGpsImage.src = "images/gitHubGps.png"
+        var linkedinGpsImage = document.createElement("img")
+        linkedinGpsImage.src = "images/linkedinGps.png"
+        var cvGpsImage = document.createElement("img")
+        cvGpsImage.src = "images/cvGps.png"
+
+        gitHubGpsImage.addEventListener("click", pointToGitHub)
+        cvGpsImage.addEventListener("click", pointToCv)
+        linkedinGpsImage.addEventListener("click", pointToLinkedin)
+
+        controlGpsDiv.appendChild(gitHubGpsImage)
+        controlGpsDiv.appendChild(linkedinGpsImage)
+        controlGpsDiv.appendChild(cvGpsImage)
+
+        controlDiv.appendChild(controlGpsDiv)
+
+        // Left Right buttons
+        var controlLeftRightDiv = document.createElement("div")
+        controlLeftRightDiv.classList.add("controlLeftRightDiv")
+        var leftImage = document.createElement("img")
+        leftImage.src = "images/left.png"
+        var rightImage = document.createElement("img")
+        rightImage.src = "images/right.png"
+
+        const makeLeftTrue = () => move_left = 1
+        const makeLeftFalse = () => move_left = 0
+        const makeRightTrue = () => move_right = 1
+        const makeRightFalse = () => move_right = 0
+
+        leftImage.addEventListener("touchstart", makeLeftTrue)
+        leftImage.addEventListener("touchend", makeLeftFalse)
+        rightImage.addEventListener("touchstart", makeRightTrue)
+        rightImage.addEventListener("touchend", makeRightFalse)
+
+        controlLeftRightDiv.appendChild(leftImage)
+        controlLeftRightDiv.appendChild(rightImage)
+
+        controlDiv.appendChild(controlLeftRightDiv)
+
+        // Honking Button
+        var controlHonkDiv = document.createElement("div")
+        controlHonkDiv.classList.add("controlHonkDiv")
+        var honkingImage = document.createElement("img")
+        honkingImage.src = "images/honk_key.png"
+
+        const handleHonk = () => {
+            return  soundOn ? honkSound.play() : "" ,
+            isHonking = 1,
+            honkingClock.start()
+        }
+
+        honkingImage.addEventListener("click", handleHonk)
+
+        controlHonkDiv.appendChild(honkingImage)
+        controlDiv.appendChild(controlHonkDiv)
+
+    }
+
+    else {
+        var controlImageDiv = document.createElement("div")
+        controlImageDiv.classList.add("controlImageDiv")
+        var controlImage = document.createElement("img")
+        controlImage.src = "images/controls.png"
+        controlImageDiv.appendChild(controlImage)
+        var honkingImage = document.createElement("img")
+        honkingImage.src = "images/honk_key.png"
+        honkingImage.id = "honking"
+        controlImageDiv.appendChild(honkingImage)
+        controlDiv.appendChild(controlImageDiv)
+    }
 }
+
+// Enter Button Symbol
 
 var enterButtonDiv = document.createElement("div")
 enterButtonDiv.classList.add("enterButtonDiv")
 enterButtonDiv.classList.add("hidden")
 var enterButtonImage = document.createElement("img")
-enterButtonImage.src = "images/enter.png"
+if (smallScreen.matches) {
+    enterButtonImage.src = "images/tap_anywhere.png"
+}
+else {
+    enterButtonImage.src = "images/enter.png"
+}
+
 enterButtonDiv.appendChild(enterButtonImage)
 enterDiv.appendChild(enterButtonDiv)
 
@@ -205,7 +309,7 @@ gltfLoader.load(
         renderer.render(scene, camera)
     }
 )
-duckGroup.position.y = 280
+duckGroup.position.y = 250
 duckGroup.position.z = 100
 duckGroup.position.x = 10
 duckGroup.scale.set(8,8,8)
@@ -710,6 +814,7 @@ window.addEventListener('resize', () =>
 let move_left
 let move_right
 let speed = 1
+if (smallScreen.matches) {speed = 2}
 
 // gps variables
 let cvGps
@@ -730,18 +835,30 @@ const moveRocket = () => {
     }
 }
 
+// starting Function
+const startCommand = () => {
+    if (!start) {
+        start = 1,
+        rocketGroup.add(launchParticles.getMesh()),
+        hideStartInfo()
+    }
+}
+
 document.addEventListener("click", startEverything)
+// Mobile event listeners
+if (smallScreen.matches) {
+
+    controlDiv.addEventListener("click", startCommand)
+
+}
+
 
 // Key Down Listener
 document.onkeydown = function(e) {
     e.preventDefault();
     let k = e.code
     // listening for liftoff command
-    if (k === "KeyS" && !start) {
-        start = 1;
-        rocketGroup.add(launchParticles.getMesh());
-        hideStartInfo()
-    }
+    if (k === "KeyS" && !start) { startCommand() }
     // listening for flight-controlls
     else if (k === "ArrowLeft") { move_left = 1}
     else if (k === "ArrowRight") { move_right = 1 }
@@ -801,6 +918,28 @@ document.onkeyup = function(e) {
     if (k === "ArrowLeft") { move_left = 0 }
     else if (k === "ArrowRight") { move_right = 0 }
   };
+
+// Mobile Support
+if (smallScreen.matches) {
+
+    const navigate = () => {
+        if ( Math.abs(rocketGroup.position.z - gitHub.position.z) < 15 && Math.abs(rocketGroup.position.y - gitHub.position.y) < 15) { 
+            window.open('https://github.com/SwissCheese15', '_blank')
+        }
+        if ( Math.abs(rocketGroup.position.z - linkedin.position.z) < 15 && Math.abs(rocketGroup.position.y - linkedin.position.y) < 15) { 
+            window.open('https://www.linkedin.com/in/manuel-winkler-developer/', '_blank')
+        }
+        if ( Math.abs(rocketGroup.position.z - cv.position.z) < 15 && Math.abs(rocketGroup.position.y - cv.position.y) < 15) { 
+            window.open('documents/CV Manuel Winkler.pdf', '_blank')
+        }
+        if ( Math.abs(rocketGroup.position.z - duckGroup.position.z) < 20 && Math.abs(rocketGroup.position.y - duckGroup.position.y) < 20) { 
+            window.open('documents/duck_award.pdf', '_blank')
+        }
+    }
+    
+    document.addEventListener("click", navigate)
+}
+
 
 // End of Keypress experiments -----------------------------------------------------
 // Animations ----------------------------------------------------------------------
@@ -922,11 +1061,14 @@ const launchTick = () => {
         if (elapsedTime < 0.1 && soundOn) {countdownSound.play()}
         
         // rocket / camera animations
+        if (elapsedTime < 3.8) {camera.position.z -= 0.2}
+
         if (elapsedTime > 3.8) {
             rocketGroup.position.y += 0.0038 * elapsedTime ** 3
             arrowGroup.position.y += 0.0038 * elapsedTime ** 3
+            camera.position.z += 0.27
             camera.position.y +=  0.5
-            camera.position.x -= 0.16
+            camera.position.x -= 0.20
         }
         if (elapsedTime > 3.8 && elapsedTime < 3.83) {
             rocketGroup.remove(rocketGroup.children[1]),
@@ -945,7 +1087,7 @@ const launchTick = () => {
     renderer.render(scene, camera)
 
     // Call tick again on the next frame
-    if (camera.position.y > rocketGroup.position.y) {
+    if (camera.position.z <= 0) {
         window.requestAnimationFrame(launchTick)
     }
     else { return removeStartInfo(), addFlightInfo(), flightTick() }

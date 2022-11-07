@@ -1,0 +1,205 @@
+@media only screen and (max-width: 600px) {
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Orbitron', sans-serif;
+    }
+    
+    html,
+    body {
+        overflow: hidden;
+    }
+    
+    .webgl {
+        position: fixed;
+        top: 0;
+        left: 0;
+        outline: none;
+    }
+    
+    #controls {
+        position: absolute;
+        width: 87vw;
+        height: 30vh;
+        top: 70vh;
+        opacity: 1;
+        transition: opacity 1s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #controls img {
+        width: 13vw;
+    }
+    
+    #controls.hidden {
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    #controlGpsDiv {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1vh;
+    }
+
+    #controlGpsDiv img{
+        width: 25vw;
+        margin-right: 1vw;
+        margin-left: 1vw;
+    }
+
+    .controlLeftRightDiv {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1vh;
+    }
+
+    .controlLeftRightDiv img {
+        margin-right: 4vw;
+        margin-left: 4vw;
+    }
+
+    .controlHonkDiv {
+        display: flex;
+        justify-content: center;
+        margin-left: 7vw;
+    }
+    
+    #startImageMobile img {
+        width: 40vw;
+    }
+
+    .startImageDiv {
+        display: flex;
+        justify-content: center;
+        width: 40vw;
+    }
+    
+    .startImageDiv img {
+        width: 40vw;
+    }
+    
+    .controlImageDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 60vh;
+        width: 16vw;
+    }
+    
+    .controlImageDiv img {
+        height: 60vh;
+    }
+    
+    .welcome {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        font-size: 12vh;
+        position: absolute;
+        opacity: 1;
+        transition: opacity 2s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        z-index: 0;
+    }
+    
+    .welcome h2 {
+        font-size: 6vw;
+        margin-bottom: 10vh;
+        font-weight: 600;
+    }
+    
+    .welcome p {
+        font-size: 4.5vw;
+        font-weight: 400;
+        text-align: center;
+    }
+    
+    .welcome.hidden {
+        opacity: 0;
+    }
+    
+    .enterButtonDiv {
+        position: absolute;
+        left: 35vw ; top: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        opacity: 1;
+    }
+    
+    .enterButtonDiv img {
+        width: 30vw;
+    }
+    
+    .enterButtonDiv.hidden {
+        opacity: 0;
+        transition: opacity 1s;
+        height: 1vh;
+    }
+    
+    .enterButtonDiv.hidden img{
+        opacity: 0;
+        transition: opacity 1s;
+        height: 1vh;
+    }
+    
+    .juleDiv {
+        position: absolute;
+        left: 30vw ; top: 25vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 50vh;
+        opacity: 1;
+        transition: opacity 1s;
+    }
+    
+    .juleDiv img {
+        height: 50vh;
+        border-radius: 5%;
+    }
+    
+    .juleDiv.hidden {
+        opacity: 0;
+        transition: opacity 1s;
+        height: 1vh;
+    }
+    
+    .juleDiv.hidden img{
+        opacity: 0;
+        transition: opacity 1s;
+        height: 1vh;
+    }
+    
+    #speaker {
+        position: absolute;
+        right: 0 ; bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 14vh;
+        width: 10vw;
+        z-index: 1;
+    }
+    
+    #speaker img {
+        height: 6vh;
+    }
+    
+    #honking {
+        margin-left: 1.85vh;
+        height: 8.5vh;
+    }
+  }
+
+
+
