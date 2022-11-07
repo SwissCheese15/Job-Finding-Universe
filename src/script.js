@@ -145,6 +145,7 @@ const addFlightInfo = () => {
 
         const handleHonk = () => {
             return  soundOn ? honkSound.play() : "" ,
+            console.log(honkSound),
             isHonking = 1,
             honkingClock.start()
         }
