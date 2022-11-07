@@ -850,6 +850,14 @@ const moveRocket = () => {
     }
 }
 
+let countdownSound
+let launchSound
+let fasterSoundOne
+let fasterSoundTwo
+let slowerSoundOne
+let slowerSoundTwo
+let honkSound
+
 const doMobileAudio = () => {
     let listener = new THREE.AudioListener()
     camera.add(listener)
@@ -858,13 +866,13 @@ const doMobileAudio = () => {
 
     const volume = 0.15
 
-    let countdownSound = new THREE.Audio(listener)
-    let launchSound = new THREE.Audio(listener)
-    let fasterSoundOne = new THREE.Audio(listener)
-    let fasterSoundTwo = new THREE.Audio(listener)
-    let slowerSoundOne = new THREE.Audio(listener)
-    let slowerSoundTwo = new THREE.Audio(listener)
-    let honkSound = new THREE.Audio(listener)
+    countdownSound = new THREE.Audio(listener)
+    launchSound = new THREE.Audio(listener)
+    fasterSoundOne = new THREE.Audio(listener)
+    fasterSoundTwo = new THREE.Audio(listener)
+    slowerSoundOne = new THREE.Audio(listener)
+    slowerSoundTwo = new THREE.Audio(listener)
+    honkSound = new THREE.Audio(listener)
 
     countdownSound.setVolume(volume * 0.5)
     launchSound.setVolume(volume)
