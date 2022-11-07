@@ -109,10 +109,22 @@ const addFlightInfo = () => {
         var rightImage = document.createElement("img")
         rightImage.src = "images/right.png"
 
-        const makeLeftTrue = () => move_left = 1
-        const makeLeftFalse = () => move_left = 0
-        const makeRightTrue = () => move_right = 1
-        const makeRightFalse = () => move_right = 0
+        const makeLeftTrue = (e) => {
+            e.preventDefault,
+            move_left = 1
+        }
+        const makeLeftFalse = (e) => {
+            e.preventDefault,
+            move_left = 0
+        }
+        const makeRightTrue = (e) => {
+            e.preventDefault,
+            move_right = 1
+        }
+        const makeRightFalse = (e) => {
+            e.preventDefault,
+            move_right = 0
+        }
 
         leftImage.addEventListener("touchstart", makeLeftTrue)
         leftImage.addEventListener("touchend", makeLeftFalse)
