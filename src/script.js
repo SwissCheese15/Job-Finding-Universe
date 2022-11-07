@@ -39,7 +39,6 @@ if (smallScreen.matches) {
 welcomeDiv.appendChild(welcomeSubDiv)
 
 const startEverything = () => {
-    doMobileAudio()
     welcomeTick()
     welcomeSubDiv.classList.add("hidden")
     document.removeEventListener("click", startEverything)
@@ -112,7 +111,9 @@ const addFlightInfo = () => {
         rightImage.src = "images/right.png"
 
         const makeLeftTrue = (e) => { 
+            console.log(e),
             e.preventDefault(),
+            console.log(e)
             move_left = 1
         }
         const makeLeftFalse = (e) => {
@@ -146,7 +147,6 @@ const addFlightInfo = () => {
 
         const handleHonk = () => {
             return  soundOn ? honkSound.play() : "" ,
-            console.log(honkSound),
             isHonking = 1,
             honkingClock.start()
         }
@@ -850,63 +850,12 @@ const moveRocket = () => {
     }
 }
 
-let countdownSound
-let launchSound
-let fasterSoundOne
-let fasterSoundTwo
-let slowerSoundOne
-let slowerSoundTwo
-let honkSound
-
-const doMobileAudio = () => {
-    let listener = new THREE.AudioListener()
-    camera.add(listener)
-
-    let audioLoader = new THREE.AudioLoader()
-
-    const volume = 100
-
-    countdownSound = new THREE.Audio(listener)
-    launchSound = new THREE.Audio(listener)
-    fasterSoundOne = new THREE.Audio(listener)
-    fasterSoundTwo = new THREE.Audio(listener)
-    slowerSoundOne = new THREE.Audio(listener)
-    slowerSoundTwo = new THREE.Audio(listener)
-    honkSound = new THREE.Audio(listener)
-
-    countdownSound.setVolume(volume * 0.5)
-    launchSound.setVolume(volume)
-    fasterSoundOne.setVolume(volume)
-    fasterSoundTwo.setVolume(volume)
-    slowerSoundOne.setVolume(volume)
-    slowerSoundTwo.setVolume(volume)
-    honkSound.setVolume(volume)
-    audioLoader.load("/sounds/countdown.mp3", (buffer) => {
-        countdownSound.setBuffer(buffer)
-    })
-    audioLoader.load("/sounds/launch.mp3", (buffer) => {
-        launchSound.setBuffer(buffer)
-    })
-    audioLoader.load("/sounds/thruster.mp3", (buffer) => {
-        fasterSoundOne.setBuffer(buffer),
-        fasterSoundTwo.setBuffer(buffer)
-    })
-    audioLoader.load("/sounds/slower.mp3", (buffer) => {
-        slowerSoundOne.setBuffer(buffer),
-        slowerSoundTwo.setBuffer(buffer)
-    })
-    audioLoader.load("/sounds/honk.mp3", (buffer) => {
-        honkSound.setBuffer(buffer)
-    })
-}
-
 // starting Function
 const startCommand = () => {
     if (!start) {
         start = 1,
         rocketGroup.add(launchParticles.getMesh()),
-        hideStartInfo(),
-        doMobileAudio()
+        hideStartInfo()
     }
 }
 
@@ -1032,6 +981,51 @@ camera.lookAt(rocketGroup.position)
 // controls.enableDamping = true
 
 camera.lookAt(rocketGroup.position)
+
+// Sounds --------------------------------------------------------
+
+const listener = new THREE.AudioListener()
+camera.add(listener)
+
+const audioLoader = new THREE.AudioLoader()
+
+const volume = 0.15
+
+const countdownSound = new THREE.Audio(listener)
+const launchSound = new THREE.Audio(listener)
+const fasterSoundOne = new THREE.Audio(listener)
+const fasterSoundTwo = new THREE.Audio(listener)
+const slowerSoundOne = new THREE.Audio(listener)
+const slowerSoundTwo = new THREE.Audio(listener)
+const honkSound = new THREE.Audio(listener)
+
+countdownSound.setVolume(volume * 0.5)
+launchSound.setVolume(volume)
+fasterSoundOne.setVolume(volume)
+fasterSoundTwo.setVolume(volume)
+slowerSoundOne.setVolume(volume)
+slowerSoundTwo.setVolume(volume)
+honkSound.setVolume(volume)
+
+audioLoader.load("/sounds/countdown.mp3", (buffer) => {
+    countdownSound.setBuffer(buffer)
+})
+audioLoader.load("/sounds/launch.mp3", (buffer) => {
+    launchSound.setBuffer(buffer)
+})
+audioLoader.load("/sounds/thruster.mp3", (buffer) => {
+    fasterSoundOne.setBuffer(buffer),
+    fasterSoundTwo.setBuffer(buffer)
+})
+audioLoader.load("/sounds/slower.mp3", (buffer) => {
+    slowerSoundOne.setBuffer(buffer),
+    slowerSoundTwo.setBuffer(buffer)
+})
+audioLoader.load("/sounds/honk.mp3", (buffer) => {
+    honkSound.setBuffer(buffer)
+})
+
+// End of Sounds -------------------------------------------------
 
 // Renderer
 
