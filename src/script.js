@@ -150,7 +150,7 @@ const addFlightInfo = () => {
             honkingClock.start()
         }
 
-        honkingImage.addEventListener("click", handleHonk)
+        honkingImage.addEventListener("click", honkSound.play())
 
         controlHonkDiv.appendChild(honkingImage)
         controlDiv.appendChild(controlHonkDiv)
