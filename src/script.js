@@ -149,7 +149,7 @@ const addFlightInfo = () => {
             const honkSound = new THREE.Audio(listener)
             const honkElement = document.getElementById( 'honk' );
             honkSound.setMediaElementSource( honkElement );      
-            honkSound.play()
+            honkElement.play()
             isHonking = 1,
             honkingClock.start()
         }
@@ -1000,7 +1000,7 @@ const fasterSoundOne = new THREE.Audio(listener)
 const fasterSoundTwo = new THREE.Audio(listener)
 const slowerSoundOne = new THREE.Audio(listener)
 const slowerSoundTwo = new THREE.Audio(listener)
-const honkSound = new THREE.Audio(listener)
+// const honkSound = new THREE.Audio(listener)
 
 countdownSound.setVolume(volume * 0.5)
 launchSound.setVolume(volume)
