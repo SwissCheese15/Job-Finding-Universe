@@ -1007,6 +1007,7 @@ slowerSoundOne.setVolume(volume)
 slowerSoundTwo.setVolume(volume)
 honkSound.setVolume(volume)
 
+
 audioLoader.load("/sounds/countdown.mp3", (buffer) => {
     countdownSound.setBuffer(buffer)
 })
@@ -1112,7 +1113,7 @@ const launchTick = () => {
 // Third phase, flight. Triggered when camera and rocket pos Y level.
 const flightTick = () =>
 {
-    // // Update controls
+    // Update controls
     // controls.update()
 
     // Rocket Animations -----------------------------------
