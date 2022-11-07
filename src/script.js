@@ -146,14 +146,10 @@ const addFlightInfo = () => {
         honkingImage.src = "images/honk_key.png"
 
         const handleHonk = () => {
-            const ear = new THREE.AudioListener();
-			camera.add( ear );
-            const sound1 = new THREE.PositionalAudio( ear );
-            const songElement = document.getElementById( 'honk' );
-            sound1.setMediaElementSource( songElement );
-            sound1.setRefDistance( 20 );
-            songElement.play();
-            camera.add( sound1 );
+            const honkSound = new THREE.Audio(listener)
+            const honkElement = document.getElementById( 'honk' );
+            honkSound.setMediaElementSource( honkElement );      
+            honkSound.play()
             isHonking = 1,
             honkingClock.start()
         }
@@ -1012,7 +1008,7 @@ fasterSoundOne.setVolume(volume)
 fasterSoundTwo.setVolume(volume)
 slowerSoundOne.setVolume(volume)
 slowerSoundTwo.setVolume(volume)
-honkSound.setVolume(volume)
+// honkSound.setVolume(volume)
 
 
 audioLoader.load("/sounds/countdown.mp3", (buffer) => {
@@ -1029,9 +1025,9 @@ audioLoader.load("/sounds/slower.mp3", (buffer) => {
     slowerSoundOne.setBuffer(buffer),
     slowerSoundTwo.setBuffer(buffer)
 })
-audioLoader.load("/sounds/honk.mp3", (buffer) => {
-    honkSound.setBuffer(buffer)
-})
+// audioLoader.load("/sounds/honk.mp3", (buffer) => {
+//     honkSound.setBuffer(buffer)
+// })
 
 // End of Sounds -------------------------------------------------
 
