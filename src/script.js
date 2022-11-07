@@ -146,7 +146,14 @@ const addFlightInfo = () => {
         honkingImage.src = "images/honk_key.png"
 
         const handleHonk = () => {
-            return  soundOn ? honkSound.play() : "" ,
+            const ear = new THREE.AudioListener();
+			camera.add( ear );
+            const sound1 = new THREE.PositionalAudio( ear );
+            const songElement = document.getElementById( 'honk' );
+            sound1.setMediaElementSource( songElement );
+            sound1.setRefDistance( 20 );
+            songElement.play();
+            camera.add( sound1 );
             isHonking = 1,
             honkingClock.start()
         }
@@ -917,7 +924,7 @@ document.onkeydown = function(e) {
 
     // Honk
     else if (k === "KeyH") {
-        return  soundOn ? honkSound.play() : "" ,
+        // return  soundOn ? honkSound.play() : "" ,
         isHonking = 1,
         honkingClock.start()
     }
