@@ -136,16 +136,16 @@
     
     .enterButtonDiv {
         position: absolute;
-        left: 35vw ; top: 10vh;
+        left: 30vw ; top: 10vh;
         display: flex;
-        width: 30vw;
+        width: 40vw;
         justify-content: center;
         align-items: flex-start;
         opacity: 1;
     }
     
     .enterButtonDiv img {
-        width: 30vw;
+        width: 40vw;
     }
     
     .enterButtonDiv.hidden {

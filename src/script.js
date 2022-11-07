@@ -856,7 +856,8 @@ const startCommand = () => {
     if (!start) {
         start = 1,
         rocketGroup.add(launchParticles.getMesh()),
-        hideStartInfo()
+        hideStartInfo(),
+        countdownSound.play()
     }
 }
 
@@ -990,18 +991,16 @@ camera.add(listener)
 
 const audioLoader = new THREE.AudioLoader()
 
-const volume = 0.15
+const volume = 0.2
 
 const countdownSound = new THREE.Audio(listener)
-const launchSound = new THREE.Audio(listener)
 const fasterSoundOne = new THREE.Audio(listener)
 const fasterSoundTwo = new THREE.Audio(listener)
 const slowerSoundOne = new THREE.Audio(listener)
 const slowerSoundTwo = new THREE.Audio(listener)
 const honkSound = new THREE.Audio(listener)
 
-countdownSound.setVolume(volume * 0.5)
-launchSound.setVolume(volume)
+countdownSound.setVolume(volume)
 fasterSoundOne.setVolume(volume)
 fasterSoundTwo.setVolume(volume)
 slowerSoundOne.setVolume(volume)
@@ -1011,9 +1010,6 @@ honkSound.setVolume(volume)
 audioLoader.load("/sounds/countdown.mp3", (buffer) => {
     console.log("started loading countdown")
     countdownSound.setBuffer(buffer)
-})
-audioLoader.load("/sounds/launch.mp3", (buffer) => {
-    launchSound.setBuffer(buffer)
 })
 audioLoader.load("/sounds/thruster.mp3", (buffer) => {
     fasterSoundOne.setBuffer(buffer),
@@ -1073,9 +1069,6 @@ const launchTick = () => {
     if (start) {
 
         const elapsedTime = startClock.getElapsedTime()
-
-        // countdown sound
-        if (elapsedTime < 0.1 && soundOn) {countdownSound.play()}
         
         // rocket / camera animations
         if (elapsedTime < 3.8) {camera.position.z -= 0.2}
@@ -1089,8 +1082,7 @@ const launchTick = () => {
         }
         if (elapsedTime > 3.8 && elapsedTime < 3.83) {
             rocketGroup.remove(rocketGroup.children[1]),
-            rocketGroup.add(flameParticles.getMesh()),
-            soundOn ? launchSound.play() : ""
+            rocketGroup.add(flameParticles.getMesh())
         }
     }
 
