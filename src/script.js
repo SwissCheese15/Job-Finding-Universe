@@ -1009,6 +1009,7 @@ slowerSoundTwo.setVolume(volume)
 honkSound.setVolume(volume)
 
 audioLoader.load("/sounds/countdown.mp3", (buffer) => {
+    console.log("started loading countdown")
     countdownSound.setBuffer(buffer)
 })
 audioLoader.load("/sounds/launch.mp3", (buffer) => {

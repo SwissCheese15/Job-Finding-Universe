@@ -121,30 +121,30 @@
 
     .juleDiv {
         position: absolute;
-        left: 30vw ; top: 25vh;
+        left: 20vw ; top: 25vh;
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        height: 50vh;
+        width: 60vw;
         opacity: 1;
         transition: opacity 1s;
     }
 
     .juleDiv img {
-        height: 50vh;
+        width: 60vw;
         border-radius: 5%;
     }
 
     .juleDiv.hidden {
         opacity: 0;
         transition: opacity 1s;
-        height: 1vh;
+        width: 1px;
     }
 
     .juleDiv.hidden img{
         opacity: 0;
         transition: opacity 1s;
-        height: 1vh;
+        width: 1px;
     }
 
     #speaker {
