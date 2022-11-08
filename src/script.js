@@ -294,15 +294,33 @@ const rocketGroup = new THREE.Group()
 const arrowGroup = new THREE.Group()
 const duckGroup = new THREE.Group()
 
+// const cubeTextureLoader = new THREE.CubeTextureLoader()
+
+// const environmentMap = cubeTextureLoader.load([
+//     'images/cubemap/white.png'
+// ])
+
+// const updateAllMaterials = () => {
+//     rocketGroup.traverse((child) => {
+//         if(child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial)
+//         {
+//             child.material.envMap = environmentMap
+//             child.material.envMapIntensity = 0.5
+            
+//         }
+//     })
+// }
+
 gltfLoader.load(
     '/models/rocket_2.glb',
     (gltf) =>
-    {
+    { 
         gltf.scene.scale.set(1.5, 1.5, 1.5)
         gltf.scene.position.set(0, -5.2, 0)
         gltf.scene.rotation.y = Math.PI * 1.5
         rocketGroup.add(gltf.scene)
         renderer.render(scene, camera)
+        // updateAllMaterials()
     }
 )
 
@@ -898,7 +916,7 @@ document.onkeydown = function(e) {
             window.open('https://www.linkedin.com/in/manuel-winkler-developer/', '_blank')
         }
         if ( Math.abs(rocketGroup.position.z - cv.position.z) < 15 && Math.abs(rocketGroup.position.y - cv.position.y) < 15) { 
-            window.open('documents/CV Manuel Winkler.pdf', '_blank')
+            window.open('documents/cv_file.pdf', '_blank')
         }
         if ( Math.abs(rocketGroup.position.z - duckGroup.position.z) < 20 && Math.abs(rocketGroup.position.y - duckGroup.position.y) < 20) { 
             window.open('documents/duck_award.pdf', '_blank')
@@ -946,7 +964,7 @@ if (smallScreen.matches) {
             window.open('https://www.linkedin.com/in/manuel-winkler-developer/', '_blank')
         }
         if ( Math.abs(rocketGroup.position.z - cv.position.z) < 15 && Math.abs(rocketGroup.position.y - cv.position.y) < 15) { 
-            window.open('documents/CV Manuel Winkler.pdf', '_blank')
+            window.open('documents/cv_file.pdf', '_blank')
         }
         if ( Math.abs(rocketGroup.position.z - duckGroup.position.z) < 20 && Math.abs(rocketGroup.position.y - duckGroup.position.y) < 20) { 
             window.open('documents/duck_award.pdf', '_blank')

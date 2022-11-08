@@ -180,12 +180,16 @@
         height: 50vh;
         opacity: 1;
         transition: opacity 1s;
+        transition: height 1s;
+        transition: width 1s;
     }
     
     .juleDiv img {
         height: 50vh;
         border-radius: 5%;
         width: 90vw;
+        transition: height 1s;
+        transition: width 1s;
     }
     
     .juleDiv.hidden {

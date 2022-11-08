@@ -101,22 +101,32 @@
         height: 16vh;
         opacity: 1;
         transition: opacity 1s;
+        transition: height 1s;
+        transition: width 1s;
     }
 
     .enterButtonDiv img {
         height: 16vh;
+        transition: height 1s;
+        transition: width 1s;
     }
 
     .enterButtonDiv.hidden {
         opacity: 0;
         transition: opacity 1s;
-        height: 1vh;
+        width: 1px;
+        height: 1px;
+        transition: height 1s;
+        transition: width 1s;
     }
 
     .enterButtonDiv.hidden img{
         opacity: 0;
         transition: opacity 1s;
-        height: 1vh;
+        width: 1px;
+        height: 1px;
+        transition: height 1s;
+        transition: width 1s;
     }
 
     .juleDiv {
@@ -128,23 +138,33 @@
         width: 60vw;
         opacity: 1;
         transition: opacity 1s;
+        transition: height 1s;
+        transition: width 1s;
     }
 
     .juleDiv img {
         width: 60vw;
         border-radius: 5%;
+        transition: height 1s;
+        transition: width 1s;
     }
 
     .juleDiv.hidden {
         opacity: 0;
         transition: opacity 1s;
         width: 1px;
+        height: 1px;
+        transition: height 1s;
+        transition: width 1s;
     }
 
     .juleDiv.hidden img{
         opacity: 0;
         transition: opacity 1s;
         width: 1px;
+        height: 1px;
+        transition: height 1s;
+        transition: width 1s;
     }
 
     #speaker {
