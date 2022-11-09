@@ -1,9 +1,9 @@
 # 3D Job-Finding-Universe
 
 ## Background
-I created this website on my weekends and evenings during the Full-Stack Bootcamp.
-Learing three.js was great for my spare time, because i trained javascript and improved at coding in general.
-It felt like **"my own little hackatlon"**. Me vs. the features I kept coming up with.
+I created this website on the weekends and evenings of my Full-Stack Bootcamp.
+Learing three.js was great for my spare time, because it also let me practice plain javascript.
+It felt like **"a little hackatlon"**. Me vs. "The features I kept coming up with".
 
 ## Highlights
 **- Figuring out the rocket controls** <br>
