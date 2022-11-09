@@ -7,8 +7,9 @@ It felt like **"my own little hackatlon"**. Me vs. the features I kept coming up
 
 ## Highlights
 **- Figuring out the rocket controls** <br>
-**- Cracking the GPS Functionality** <br>
+**- Cracking the GPS functionality** <br>
 **- Redirecting to other pages depending on rocket position** <br>
+**- Implementing mobile support** <br>
 
 
 ## Website
