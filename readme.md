@@ -2,7 +2,7 @@
 
 ## Background
 I created this website on the weekends and evenings of my Full-Stack Bootcamp.
-Learing three.js was great for my spare time, because it also let me practice plain javascript.
+Learing three.js was great for my spare time, because it was also good practice for plain javascript.
 It felt like **"a little hackatlon"**. Me vs. "The features I kept coming up with".
 
 ## Highlights
