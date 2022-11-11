@@ -21,6 +21,11 @@ https://www.cgtrader.com/free-3d-models/aircraft/other/toy-rocket-white-and-red 
 
 ## Making of
 
+### First ideas
+<img width="417" alt="Bildschirmfoto 2022-11-11 um 22 38 19" src="https://user-images.githubusercontent.com/110164826/201434830-5d829739-58ad-4b6b-9aa0-4f56616649d7.png"> <img width="534" alt="Bildschirmfoto 2022-11-11 um 22 40 00" src="https://user-images.githubusercontent.com/110164826/201434845-149c03c3-46a2-4fda-a678-31d1a6dd4a48.png">
+<img width="956" alt="Bildschirmfoto 2022-11-11 um 22 48 58" src="https://user-images.githubusercontent.com/110164826/201435648-67717c97-0d3c-4fed-98cf-94241e170104.png">
+
+
 ### Getting started
 <img width="1414" alt="Universe 1" src="https://user-images.githubusercontent.com/110164826/199132163-9c975e98-a3a7-45b9-a726-19f6206aa3b8.png">
 
