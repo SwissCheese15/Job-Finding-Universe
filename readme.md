@@ -35,14 +35,14 @@ https://www.cgtrader.com/free-3d-models/aircraft/other/toy-rocket-white-and-red 
 ### The rockets first steps
 ![Bildschirmfoto 2022-11-01 um 01 16 42](https://user-images.githubusercontent.com/110164826/199132508-fdbfa1e3-fdce-447a-9ba6-2e2ab915c8ed.png)
 
-### Filling the void
-![Bildschirmfoto 2022-11-01 um 01 18 26](https://user-images.githubusercontent.com/110164826/199132617-2cadbf72-740b-4ec7-bfd4-d7361552142e.png)
-
 ### Super realistic fire...
 ![Bildschirmfoto 2022-11-01 um 01 19 47](https://user-images.githubusercontent.com/110164826/199132723-6d28d3d4-d547-4b39-960c-9d3cbc8d9a30.png)
 
 ### ...Much better
 ![Bildschirmfoto 2022-11-01 um 01 20 32](https://user-images.githubusercontent.com/110164826/199132766-7914cd08-2eb8-4408-98a7-676b68043dce.png)
+
+### Filling the void
+![Bildschirmfoto 2022-11-01 um 01 18 26](https://user-images.githubusercontent.com/110164826/199132617-2cadbf72-740b-4ec7-bfd4-d7361552142e.png)
 
 ### First planets
 ![Universe 9](https://user-images.githubusercontent.com/110164826/199132900-4be9b04e-b99e-447f-ba85-4431b970acdb.png)
@@ -50,7 +50,7 @@ https://www.cgtrader.com/free-3d-models/aircraft/other/toy-rocket-white-and-red 
 ### First Texture Experiments
 ![Bildschirmfoto 2022-11-01 um 01 22 28](https://user-images.githubusercontent.com/110164826/199132978-dfd44d5e-ffaa-43e8-be7d-b132ce7fae44.png)
 
-### Height displacement map...
+### Making a height displacement map...
 ![Bildschirmfoto 2022-11-01 um 01 26 52](https://user-images.githubusercontent.com/110164826/199133305-e52bede7-cf93-48b8-8ec0-1ede409b06f3.png)
 
 ### ...worth it!
@@ -64,7 +64,7 @@ https://www.cgtrader.com/free-3d-models/aircraft/other/toy-rocket-white-and-red 
 ![Bildschirmfoto 2022-11-01 um 01 23 55](https://user-images.githubusercontent.com/110164826/199133103-c38d019d-8b50-4054-9c8d-faca2bab65e8.png)
 <img width="330" alt="Bildschirmfoto 2022-11-09 um 02 03 56" src="https://user-images.githubusercontent.com/110164826/200710776-6dc81a02-060e-412e-974c-38085d0b38b6.png">
 
-### Some custom controls
+### Some custom control icons
 <img width="309" alt="Bildschirmfoto 2022-10-31 um 02 04 25" src="https://user-images.githubusercontent.com/110164826/199133469-05ae4840-7e75-4463-888c-1e91a081851e.png">![Bildschirmfoto 2022-10-31 um 18 52 52](https://user-images.githubusercontent.com/110164826/199133481-6b8b79ce-dc73-4441-b01f-88a591027e53.png)
 <img width="218" alt="Bildschirmfoto 2022-10-31 um 10 28 48" src="https://user-images.githubusercontent.com/110164826/199133582-9a6949f5-660b-438e-ad73-7d041221d330.png">
 
