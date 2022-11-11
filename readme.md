@@ -3,7 +3,7 @@
 ## Background
 I created this website on the weekends and evenings of my Full-Stack Bootcamp.
 Learing three.js was great for my spare time, because it was also good practice for plain javascript.
-It felt like **"a little hackatlon"**. Me vs. "The features I kept coming up with".
+It felt like **a little hackatlon**. "Me vs. The universe's features".
 
 ## Highlights
 **- Figuring out the rocket controls** <br>
@@ -29,7 +29,7 @@ https://www.cgtrader.com/free-3d-models/aircraft/other/toy-rocket-white-and-red 
 ### Getting started
 <img width="1414" alt="Universe 1" src="https://user-images.githubusercontent.com/110164826/199132163-9c975e98-a3a7-45b9-a726-19f6206aa3b8.png">
 
-### Gotta have some stars
+### Gotta have some "stars"
 <img width="1439" alt="Universe 2" src="https://user-images.githubusercontent.com/110164826/199132245-093908dd-91b7-4dbd-8392-ab080d4cddf7.png">
 
 ### The rockets first steps
