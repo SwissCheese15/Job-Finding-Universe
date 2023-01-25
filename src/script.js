@@ -1058,9 +1058,11 @@ const welcomeTick = () => {
 
     // first phase after start without movement
 
-    if (elapsedTime > 2.5 && elapsedTime < 5) {
+    if (elapsedTime > 2.5 && elapsedTime < 5 && camera.position.x >= -26 && camera.position.y <= 42) {
         camera.position.x -= 0.0007 * (elapsedTime ** 4)
         camera.position.y += 0.0001 * (elapsedTime ** 4)
+        console.log("x", camera.position.x)
+        console.log("y", camera.position.y)
     }
     if (elapsedTime > 4) {
         camera.position.y += 0.0002 * (elapsedTime ** 4)
@@ -1095,8 +1097,11 @@ const launchTick = () => {
             arrowGroup.position.y += 0.0038 * elapsedTime ** 3
             camera.position.z += 0.27
             camera.position.y +=  0.5
-            camera.position.x -= 0.20
+            if (camera.position.x >= -55) {
+                camera.position.x -= 0.14
+            }
         }
+
         if (elapsedTime > 3.8 && elapsedTime < 3.83) {
             rocketGroup.remove(rocketGroup.children[1]),
             rocketGroup.add(flameParticles.getMesh())
