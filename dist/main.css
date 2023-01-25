@@ -1,0 +1,420 @@
+@import url(https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap);
+/* Fonts */
+
+@media only screen and (min-width: 601px) {
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    html,
+    body {
+        overflow: hidden;
+    }
+
+    .webgl {
+        position: fixed;
+        top: 0;
+        left: 0;
+        outline: none;
+    }
+
+    #controls {
+        position: absolute;
+        right: 9vw ; top: 5vh;
+        opacity: 1;
+        transition: opacity 1s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #controls.hidden {
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    .startImageDiv {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 10vh;
+        width: 16vw;
+    }
+
+    .startImageDiv img {
+        height: 10vh;
+    }
+
+    .controlImageDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 60vh;
+        width: 16vw;
+    }
+
+    .controlImageDiv img {
+        height: 60vh;
+    }
+
+    .welcome {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        font-size: 12vh;
+        position: absolute;
+        opacity: 1;
+        transition: opacity 2s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        z-index: 0;
+    }
+
+    .welcome h2 {
+        font-size: 8vh;
+        margin-bottom: 10vh;
+        font-weight: 600;
+    }
+
+    .welcome p {
+        font-size: 3.5vh;
+        font-weight: 400;
+    }
+
+    .welcome.hidden {
+        opacity: 0;
+    }
+
+    .enterButtonDiv {
+        position: absolute;
+        left: 30vw ; top: 43vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 16vh;
+        opacity: 1;
+        transition: opacity 1s;
+        transition: height 1s;
+        transition: width 1s;
+    }
+
+    .enterButtonDiv img {
+        height: 16vh;
+        transition: height 1s;
+        transition: width 1s;
+    }
+
+    .enterButtonDiv.hidden {
+        opacity: 0;
+        transition: opacity 1s;
+        width: 1px;
+        height: 1px;
+        transition: height 1s;
+        transition: width 1s;
+    }
+
+    .enterButtonDiv.hidden img{
+        opacity: 0;
+        transition: opacity 1s;
+        width: 1px;
+        height: 1px;
+        transition: height 1s;
+        transition: width 1s;
+    }
+
+    .juleDiv {
+        position: absolute;
+        left: 20vw ; top: 25vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 60vw;
+        opacity: 1;
+        transition: opacity 1s;
+        transition: height 1s;
+        transition: width 1s;
+    }
+
+    .juleDiv img {
+        width: 60vw;
+        border-radius: 5%;
+        transition: height 1s;
+        transition: width 1s;
+    }
+
+    .juleDiv.hidden {
+        opacity: 0;
+        transition: opacity 1s;
+        width: 1px;
+        height: 1px;
+        transition: height 1s;
+        transition: width 1s;
+    }
+
+    .juleDiv.hidden img{
+        opacity: 0;
+        transition: opacity 1s;
+        width: 1px;
+        height: 1px;
+        transition: height 1s;
+        transition: width 1s;
+    }
+
+    #speaker {
+        position: absolute;
+        right: 0 ; bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 14vh;
+        width: 10vw;
+        z-index: 1;
+    }
+
+    #speaker img {
+        height: 6vh;
+    }
+
+    #honking {
+        margin-left: 1.85vh;
+        height: 8.5vh;
+    }
+}
+@media only screen and (max-width: 600px) {
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Orbitron', sans-serif;
+    }
+    
+    html,
+    body {
+        overflow: hidden;
+    }
+    
+    .webgl {
+        position: fixed;
+        top: 0;
+        left: 0;
+        outline: none;
+    }
+    
+    #controls {
+        position: absolute;
+        width: 100vw;
+        height: 30vh;
+        top: 60vh;
+        opacity: 1;
+        transition: opacity 1s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #controls img {
+        width: 13vw;
+    }
+    
+    #controls.hidden {
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    #controlGpsDiv {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1vh;
+    }
+
+    #controlGpsDiv img{
+        width: 25vw;
+        margin-right: 1vw;
+        margin-left: 1vw;
+    }
+
+    .controlLeftRightDiv {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1vh;
+    }
+
+    .controlLeftRightDiv img {
+        margin-right: 4vw;
+        margin-left: 4vw;
+    }
+
+    #controlHonkDiv {
+        display: flex;
+        justify-content: center;
+        margin-left: 12vw;
+        width: 25vw;
+    }
+
+    #controlHonkDiv img {
+        display: flex;
+        justify-content: center;
+        width: 25vw;
+    }
+    
+    #startImageMobile img {
+        width: 40vw;
+    }
+
+    .startImageDiv {
+        display: flex;
+        justify-content: center;
+        width: 40vw;
+    }
+    
+    .startImageDiv img {
+        width: 40vw;
+    }
+    
+    .controlImageDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 60vh;
+        width: 16vw;
+    }
+    
+    .controlImageDiv img {
+        height: 60vh;
+    }
+    
+    .welcome {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        font-size: 12vh;
+        position: absolute;
+        opacity: 1;
+        transition: opacity 2s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        z-index: 0;
+    }
+    
+    .welcome h2 {
+        font-size: 6vw;
+        margin-bottom: 10vh;
+        font-weight: 600;
+    }
+    
+    .welcome p {
+        font-size: 4.5vw;
+        font-weight: 400;
+        text-align: center;
+    }
+    
+    .welcome.hidden {
+        opacity: 0;
+    }
+    
+    .enterButtonDiv {
+        position: absolute;
+        left: 25vw ; top: 10vh;
+        display: flex;
+        width: 50vw;
+        justify-content: center;
+        align-items: flex-start;
+        opacity: 1;
+        transition: height 1s;
+        transition: width 1s;
+    }
+    
+    .enterButtonDiv img {
+        width: 50vw;
+        transition: height 1s;
+        transition: width 1s;
+    }
+    
+    .enterButtonDiv.hidden {
+        opacity: 0;
+        transition: opacity 1s;
+        width: 1px;
+        height: 1px;
+        transition: height 1s;
+        transition: width 1s;
+    }
+    
+    .enterButtonDiv.hidden img{
+        opacity: 0;
+        transition: opacity 1s;
+        width: 1px;
+        height: 1px;
+        transition: height 1s;
+        transition: width 1s;
+    }
+    
+    .juleDiv {
+        position: absolute;
+        top: 10vh; left: 5vw;
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 50vh;
+        opacity: 1;
+        transition: opacity 1s;
+        transition: height 1s;
+        transition: width 1s;
+    }
+    
+    .juleDiv img {
+        height: 50vh;
+        border-radius: 5%;
+        width: 90vw;
+        transition: height 1s;
+        transition: width 1s;
+    }
+    
+    .juleDiv.hidden {
+        opacity: 0;
+        transition: opacity 1s;
+        height: 1px;
+        width: 1px;
+        transition: height 1s;
+        transition: width 1s;
+    }
+    
+    .juleDiv.hidden img{
+        opacity: 0;
+        transition: opacity 1s;
+        height: 1px;
+        width: 1px;
+        transition: height 1s;
+        transition: width 1s;
+    }
+    
+    #speaker {
+        position: absolute;
+        right: 5vw ; bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 14vh;
+        width: 10vw;
+        z-index: 1;
+    }
+    
+    #speaker img {
+        height: 6vh;
+    }
+
+  }
+
+
+/*# sourceMappingURL=main.css.map*/
