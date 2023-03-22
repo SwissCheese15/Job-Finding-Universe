@@ -18,6 +18,10 @@ You can visit the live version of the project at https://job-finding-universe.ve
 If anyone wants my little **rocket model**, the **GPS arrow** or the **toon-globe** textures, take them from the project or go to: <br>
 https://www.cgtrader.com/free-3d-models/aircraft/other/toy-rocket-white-and-red <br> https://www.cgtrader.com/free-3d-models/various/various-models/green-arrow-0ae27a74-1bc1-4f0d-a5e8-ff5b54f37a4b
 
+## To Do
+- Project Structure (Components)
+- Fix Sound issues in different browsers
+
 ## Making of
 
 ### Getting started
